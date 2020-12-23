@@ -1,0 +1,27 @@
+default:
+  - seed: 2020
+  - k: 5
+  - lr: 2e-5
+  - eps: 1e-8
+  - epochs: 3
+  - show_epoch_loss: False
+  - num_labels: 1
+  - max_grad_norm: 1.0
+  - hidden_dropout: 0.2
+  - bert_name: 'bert-base-uncased'
+  - model_path: 'model_state_dict.pkl'
+  - submit_path: 'submission.csv'
+  - submit_csv_columns: ['id', 'q', 'a', 'label', 'prediction']
+
+run_not_debug: True
+run:
+  - batch_size: 64
+  - max_seq_len_train: 64
+  - max_seq_len_test: 96
+  - loss_step: 200
+debug:
+  - corpus_size: 200
+  - batch_size: 4
+  - max_seq_len_train: 12
+  - max_seq_len_test: 24
+  - loss_step: 2
